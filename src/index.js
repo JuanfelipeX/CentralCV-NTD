@@ -1,3 +1,4 @@
+require('dotenv').config();
 const userRoutes = require("./routes/authentication")
 const express = require("express");
 const bodyParser = require('body-parser');
@@ -6,7 +7,7 @@ const port = 3000
 const { default: mongoose } = require("mongoose");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-require('dotenv').config();
+
 
 app.use("/api", userRoutes);
 

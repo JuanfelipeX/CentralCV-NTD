@@ -1,13 +1,14 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const router = express.Router(); //manejador de rutas de express
 const userSchema = require("../models/user");
 
 router.post('/signup', async (req, res) => {
     const { usuario, correo, clave } = req.body;
-    
-     user2 = await userSchema.findOne({ correo: req.body.correo });
-        if (user2) return res.status(400).json({ error: 'Usuario no encontrado' });
+
+    user2 = await userSchema.findOne({ correo: req.body.correo });
+    if (user2) return res.status(400).json({ error: 'Usuario no encontrado' });
 
     const user = new userSchema({
         usuario: usuario,
@@ -15,11 +16,26 @@ router.post('/signup', async (req, res) => {
         clave: clave
 
     });
-    
+
 
     user.clave = await user.encryptClave(user.clave);
     await user.save(); //save es un método de mongoose para guardar datos en MongoDB 
-    res.json(user);
+    //primer parámetro: payload - un dato que se agrega para generar el token
+    //segundo parámetro: un texto que hace que el código generado sea único
+    //tercer parámetro: tiempo de expiración (en segundos, 24 horas en segundos)
+    const token = jwt.sign(
+        { id: user._id },
+        process.env.SECRET,
+        {
+            expiresIn: 60// * 60 * 24 //un día en segundos 
+        }
+    );
+    res.json({
+        auth: true,
+        token
+    }
+    );
+
 });
 
 //inicio de sesión
