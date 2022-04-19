@@ -2,9 +2,10 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000
+const { default: mongoose } = require("mongoose");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+require('dotenv').config();
 app.get('/', function(req, res) {
     respuesta = {
      error: true,
@@ -13,6 +14,9 @@ app.get('/', function(req, res) {
     };
     res.send(respuesta);
 })
+console.log(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI).then(()=> console.log("login")).catch((error)=> console.error(error))
+
 let respuesta = {
     error: false,
     codigo: 200,
