@@ -1,0 +1,19 @@
+{
+  "name": "centralcv-ntd-main",
+  "version": "1.0.0",
+  "description": "Central CV is our project which consists to create curriculums with a great design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon src/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
