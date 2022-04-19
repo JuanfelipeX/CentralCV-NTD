@@ -1,3 +1,4 @@
+const userRoutes = require("./routes/authentication")
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
@@ -6,6 +7,9 @@ const { default: mongoose } = require("mongoose");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 require('dotenv').config();
+
+app.use("/api", userRoutes);
+
 app.get('/', function(req, res) {
     respuesta = {
      error: true,
@@ -24,13 +28,7 @@ let respuesta = {
    };
 
 
-'use srict';
-const http=require('http');
-
-const server=http.createServer(function(req, res){
-    res.writeHead(200, {'content-type': 'text/plain' });
-    res.end('hola mundo');
-})
-server.listen(3000);
-
+   app.listen(3000, () => {
+    console.log("El servidor está inicializado en el puerto 3000");
+   });
 
