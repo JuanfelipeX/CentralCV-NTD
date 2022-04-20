@@ -18,7 +18,7 @@ const studiesSchema = mongoose.Schema({
         required: true,
     },
     duracion: {
-        type: Date,
+        type: String,
         required: true,
     },
     lugar: {
@@ -26,8 +26,5 @@ const studiesSchema = mongoose.Schema({
         required: true,
     },
 });
-studiesSchema.methods.encryptClave = async(clave) => {
-    const salt = await bcrypt.genSalt(10);
-    return bcrypt.hash(clave, salt);
-};
-module.exports = mongoose.model("Studies", studiesSchema);
+
+module.exports = mongoose.model("studies", studiesSchema);

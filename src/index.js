@@ -1,5 +1,5 @@
 require('dotenv').config();
-const userRoutes = require("./routes/authentication")
+const userRoutes = require("./routes/authentication");
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
