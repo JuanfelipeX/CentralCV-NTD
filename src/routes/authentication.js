@@ -65,12 +65,25 @@ router.post("/studies", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+
+//studies get
 router.get("/studies", (req, res) => {
     studiesSchema
         .find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+
+//studies get por id
+router.get("/studies/:id", (req, res) => {
+    const { id } = req.params;
+    studiesSchema
+        .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 
 
 
