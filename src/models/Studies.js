@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // importando el componente mongoose
 const bcrypt = require("bcrypt"); // importando el componente bcrypt
-const userSchema = mongoose.Schema({
+const studiesSchema = mongoose.Schema({
     nivelEstudios: {
         type: String,
         required: true,
@@ -26,8 +26,8 @@ const userSchema = mongoose.Schema({
         required: true,
     },
 });
-userSchema.methods.encryptClave = async(clave) => {
+studiesSchema.methods.encryptClave = async(clave) => {
     const salt = await bcrypt.genSalt(10);
     return bcrypt.hash(clave, salt);
 };
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Studies", studiesSchema);
