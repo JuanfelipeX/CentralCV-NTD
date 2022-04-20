@@ -5,6 +5,8 @@ const router = express.Router(); //manejador de rutas de express
 const userSchema = require("../models/user");
 const studiesSchema = require("../models/studies"); //studies
 
+
+//user registrarse 
 router.post('/signup', async(req, res) => {
     const { usuario, correo, clave } = req.body;
 
@@ -36,7 +38,7 @@ router.post('/signup', async(req, res) => {
 
 });
 
-//inicio de sesión
+//user inicio de sesión 
 router.post('/login', async(req, res) => {
     // validaciones
     const { error } = userSchema.validate(req.body.correo, req.body.clave);
@@ -80,6 +82,16 @@ router.get("/studies/:id", (req, res) => {
     const { id } = req.params;
     studiesSchema
         .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+
+//studies eliminar por id
+router.delete("/studies/:id", (req, res) => {
+    const { id } = req.params;
+    studiesSchema
+        .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
