@@ -8,7 +8,7 @@ router.post('/signup', async (req, res) => {
     const { usuario, correo, clave } = req.body;
 
     user2 = await userSchema.findOne({ correo: req.body.correo });
-    if (user2) return res.status(400).json({ error: 'Usuario no encontrado' });
+    if (user2) return res.status(400).json({ error: 'usuario ya existente' });
 
     const user = new userSchema({
         usuario: usuario,
