@@ -86,6 +86,19 @@ router.get("/studies/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+//studies actualizar datos por id
+router.put("/studies/:id", (req, res) => {
+    const { id } = req.params;
+    const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
+    req.body;
+    studiesSchema
+        .updateOne({ _id: id }, {
+            $set: { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar }
+        })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 
 //studies eliminar por id
 router.delete("/studies/:id", (req, res) => {
