@@ -55,15 +55,23 @@ router.post('/login', async(req, res) => {
 })
 
 
-//studies
+//studies post
 router.post("/studies", (req, res) => {
-    const pelicula = studiesSchema(req.body);
+    const studies = studiesSchema(req.body);
 
-    pelicula
+    studies
         .save()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+router.get("/studies", (req, res) => {
+    studiesSchema
+        .find()
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 
 
 module.exports = router;
