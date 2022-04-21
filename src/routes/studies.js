@@ -2,7 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const router = express.Router(); //manejador de rutas de express
-const studiesSchema = require("../models/studies");
+const studiesSchema = require("../models/estudios");
 
 
 /*
