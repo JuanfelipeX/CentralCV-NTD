@@ -2,7 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const router = express.Router(); //manejador de rutas de express
-const studiesSchema = require("../models/estudios");
+const experienciaSchema = require("../models/experiencia");
 
 
 /*
@@ -14,17 +14,14 @@ y aparce un error, lo he intentado pero aparece el error app crashed y sale erro
 */
 
 router.post("/studies", async(req, res) => {
-    const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
+    const { cargo, nombreEmpresa, duracion } =
     req.body;
 
-    const studies = new studiesSchema({
-        nivelEstudios: nivelEstudios,
-        titulos: titulos,
-        descripcion: descripcion,
-        centrosEducativos: centrosEducativos,
-        duracion: duracion,
-        lugar: lugar,
+    const studies = new experienciaSchema({
+        cargo: cargo,
+        nombreEmpresa: nombreEmpresa,
+        duracion: duracion
     });
 
-    await studies.save();
+    await experiencia.save();
 });
