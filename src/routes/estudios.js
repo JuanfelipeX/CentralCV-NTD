@@ -13,7 +13,7 @@ y aparce un error, lo he intentado pero aparece el error app crashed y sale erro
 
 */
 
-//studies post
+//estudios post
 router.post("/estudios", (req, res) => {
     const estudios = estudiosSchema(req.body);
 
@@ -24,7 +24,7 @@ router.post("/estudios", (req, res) => {
 });
 
 
-//studies get
+//estudios get
 router.get("/estudios", (req, res) => {
     estudiosSchema
         .find()
@@ -33,7 +33,7 @@ router.get("/estudios", (req, res) => {
 });
 
 
-//studies get por id
+//estudios get por id
 router.get("/estudio/:id", (req, res) => {
     const { id } = req.params;
     estudiosSchema
@@ -42,7 +42,7 @@ router.get("/estudio/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-//studies actualizar datos por id
+//estudios actualizar datos por id
 router.put("/estudio/:id", (req, res) => {
     const { id } = req.params;
     const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
@@ -56,7 +56,7 @@ router.put("/estudio/:id", (req, res) => {
 });
 
 
-//studies eliminar por id
+//estudios eliminar por id
 router.delete("/estudio/:id", (req, res) => {
     const { id } = req.params;
     estudioSchema
