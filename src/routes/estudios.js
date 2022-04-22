@@ -13,18 +13,54 @@ y aparce un error, lo he intentado pero aparece el error app crashed y sale erro
 
 */
 
-router.post("/estudios", async(req, res) => {
+//studies post
+router.post("/estudios", (req, res) => {
+    const estudios = estudiosSchema(req.body);
+
+    estudios
+        .save()
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+
+//studies get
+router.get("/estudios", (req, res) => {
+    estudiosSchema
+        .find()
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+
+//studies get por id
+router.get("/studies/:id", (req, res) => {
+    const { id } = req.params;
+    estudiosSchema
+        .findById(id)
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
+//studies actualizar datos por id
+router.put("/studies/:id", (req, res) => {
+    const { id } = req.params;
     const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
     req.body;
+    studiesSchema
+        .updateOne({ _id: id }, {
+            $set: { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar }
+        })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
 
-    const estudios = new estudiosSchema({
-        nivelEstudios: nivelEstudios,
-        titulos: titulos,
-        descripcion: descripcion,
-        centrosEducativos: centrosEducativos,
-        duracion: duracion,
-        lugar: lugar,
-    });
 
-    await estudios.save();
+//studies eliminar por id
+router.delete("/studies/:id", (req, res) => {
+    const { id } = req.params;
+    studiesSchema
+        .remove({ _id: id })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
 });
