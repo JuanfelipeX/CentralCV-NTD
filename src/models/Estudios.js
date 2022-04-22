@@ -27,4 +27,4 @@ const studiesSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("studies", studiesSchema);
+module.exports = mongoose.model("estudios", studiesSchema);

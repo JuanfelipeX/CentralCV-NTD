@@ -13,7 +13,7 @@ y aparce un error, lo he intentado pero aparece el error app crashed y sale erro
 
 */
 
-router.post("/studies", async(req, res) => {
+router.post("/experiencia", async(req, res) => {
     const { cargo, nombreEmpresa, duracion } =
     req.body;
 
