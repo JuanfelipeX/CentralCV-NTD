@@ -1,30 +1,26 @@
 const mongoose = require("mongoose"); // importando el componente mongoose
 const bcrypt = require("bcrypt"); // importando el componente bcrypt
 const studiesSchema = mongoose.Schema({
-    nivelEstudios: {
+    nombre: {
         type: String,
         required: true,
     },
-    titulos: {
+    apellidos: {
         type: Array,
         required: true,
     },
-    descripcion: {
+    email: {
         type: String,
         required: true,
     },
-    centrosEducativos: {
+    puestoDeTrabajo: {
         type: Array,
         required: true,
     },
-    duracion: {
+    departamento: {
         type: String,
         required: true,
-    },
-    lugar: {
-        type: String,
-        required: true,
-    },
+    }
 });
 
-module.exports = mongoose.model("studies", studiesSchema);
+module.exports = mongoose.model("cuenta", cuentaSchema);

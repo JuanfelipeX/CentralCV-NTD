@@ -24,7 +24,7 @@ const studiesSchema = mongoose.Schema({
     lugar: {
         type: String,
         required: true,
-    },
+    }
 });
 
 module.exports = mongoose.model("studies", studiesSchema);
