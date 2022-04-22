@@ -1,5 +1,6 @@
 require('dotenv').config();
 const userRoutes = require("./routes/authentication");
+const estudiosRoutes = require("./routes/estudios");
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 
 
 app.use("/api", userRoutes);
+app.use("/api", estudiosRoutes);
 
 app.get('/', function(req, res) {
     respuesta = {

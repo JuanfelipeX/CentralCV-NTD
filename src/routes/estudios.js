@@ -34,7 +34,7 @@ router.get("/estudios", (req, res) => {
 
 
 //studies get por id
-router.get("/studies/:id", (req, res) => {
+router.get("/estudio/:id", (req, res) => {
     const { id } = req.params;
     estudiosSchema
         .findById(id)
@@ -43,11 +43,11 @@ router.get("/studies/:id", (req, res) => {
 });
 
 //studies actualizar datos por id
-router.put("/studies/:id", (req, res) => {
+router.put("/estudio/:id", (req, res) => {
     const { id } = req.params;
     const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
     req.body;
-    studiesSchema
+    estudioSchema
         .updateOne({ _id: id }, {
             $set: { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar }
         })
@@ -57,9 +57,9 @@ router.put("/studies/:id", (req, res) => {
 
 
 //studies eliminar por id
-router.delete("/studies/:id", (req, res) => {
+router.delete("/estudio/:id", (req, res) => {
     const { id } = req.params;
-    studiesSchema
+    estudioSchema
         .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
