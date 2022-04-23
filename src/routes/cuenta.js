@@ -15,7 +15,7 @@ router.post("/cuenta", (req, res) => {
 });
 
 
-//studies get
+//cuenta get
 router.get("/cuenta", (req, res) => {
     cuentaSchema
         .find()
@@ -24,7 +24,7 @@ router.get("/cuenta", (req, res) => {
 });
 
 
-//studies get por id
+//cuenta get por id
 router.get("/cuenta/:id", (req, res) => {
     const { id } = req.params;
     cuentaSchema
@@ -33,7 +33,7 @@ router.get("/cuenta/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-//studies actualizar datos por id
+//cuenta actualizar datos por id
 router.put("/cuenta/:id", (req, res) => {
     const { id } = req.params;
     const { nombre, apellidos, email, puestoDeTrabajo, departamento } =
@@ -47,7 +47,7 @@ router.put("/cuenta/:id", (req, res) => {
 });
 
 
-//studies eliminar por id
+//cuenta eliminar por id
 router.delete("/cuenta/:id", (req, res) => {
     const { id } = req.params;
     estudioSchema
