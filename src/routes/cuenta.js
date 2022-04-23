@@ -34,13 +34,13 @@ router.get("/cuenta/:id", (req, res) => {
 });
 
 //studies actualizar datos por id
-router.put("/estudio/:id", (req, res) => {
+router.put("/cuenta/:id", (req, res) => {
     const { id } = req.params;
-    const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
+    const { nombre, apellidos, email, puestoDeTrabajo, departamento } =
     req.body;
     estudioSchema
         .updateOne({ _id: id }, {
-            $set: { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar }
+            $set: { nombre, apellidos, email, puestoDeTrabajo, departamento }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
@@ -48,7 +48,7 @@ router.put("/estudio/:id", (req, res) => {
 
 
 //studies eliminar por id
-router.delete("/estudio/:id", (req, res) => {
+router.delete("/cuenta/:id", (req, res) => {
     const { id } = req.params;
     estudioSchema
         .remove({ _id: id })
