@@ -2,6 +2,8 @@ require('dotenv').config();
 const userRoutes = require("./routes/authentication");
 const estudiosRoutes = require("./routes/estudios");
 const cuentaRoutes = require("./routes/cuenta");
+const datosPersonalesRoutes = require("./routes/datosPersonales");
+const experienciaRoutes = require("./routes/experiencia");
 const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
@@ -14,6 +16,8 @@ app.use(bodyParser.json());
 app.use("/api", userRoutes);
 app.use("/api", estudiosRoutes);
 app.use("/api", cuentaRoutes);
+app.use("/api", datosPersonalesRoutes);
+app.use("/api", experienciaRoutes);
 
 app.get('/', function(req, res) {
     respuesta = {
@@ -22,7 +26,7 @@ app.get('/', function(req, res) {
         mensaje: 'Punto de inicio'
     };
     res.send(respuesta);
-})
+});
 
 console.log(process.env.MONGODB_URI)
 mongoose
