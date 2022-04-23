@@ -1,7 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const router = express.Router(); //manejador de rutas de express
+const router2 = express.Router(); //manejador de rutas de express
 const estudiosSchema = require("../models/estudios");
 
 
@@ -14,7 +14,7 @@ y aparce un error, lo he intentado pero aparece el error app crashed y sale erro
 */
 
 //estudios post
-router.post("/estudios", (req, res) => {
+router2.post("/estudios", (req, res) => {
     const estudios = estudiosSchema(req.body);
 
     estudios
@@ -25,7 +25,7 @@ router.post("/estudios", (req, res) => {
 
 
 //estudios get
-router.get("/estudios", (req, res) => {
+router2.get("/estudios", (req, res) => {
     estudiosSchema
         .find()
         .then((data) => res.json(data))
@@ -34,7 +34,7 @@ router.get("/estudios", (req, res) => {
 
 
 //estudios get por id
-router.get("/estudio/:id", (req, res) => {
+router2.get("/estudio/:id", (req, res) => {
     const { id } = req.params;
     estudiosSchema
         .findById(id)
@@ -43,7 +43,7 @@ router.get("/estudio/:id", (req, res) => {
 });
 
 //estudios actualizar datos por id
-router.put("/estudio/:id", (req, res) => {
+router2.put("/estudio/:id", (req, res) => {
     const { id } = req.params;
     const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
     req.body;
@@ -57,7 +57,7 @@ router.put("/estudio/:id", (req, res) => {
 
 
 //estudios eliminar por id
-router.delete("/estudio/:id", (req, res) => {
+router2.delete("/estudio/:id", (req, res) => {
     const { id } = req.params;
     estudioSchema
         .remove({ _id: id })

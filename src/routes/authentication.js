@@ -3,8 +3,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const router = express.Router(); //manejador de rutas de express
 const userSchema = require("../models/user");
-const studiesSchema = require("../models/studies"); //studies
-
 
 //user registrarse 
 router.post('/signup', async(req, res) => {
