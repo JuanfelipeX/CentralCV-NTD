@@ -56,3 +56,7 @@ router.delete("/datosPersonales/:id", (req, res) => {
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+
+
+module.exports = router;

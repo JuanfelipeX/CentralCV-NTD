@@ -35,4 +35,4 @@ const datosPersonalesSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("datosPersonales", datopsPersonalesSchema);
+module.exports = mongoose.model("datosPersonales", datosPersonalesSchema);

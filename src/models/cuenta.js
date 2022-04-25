@@ -23,4 +23,4 @@ const studiesSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("cuenta", cuentaSchema);
+module.exports = mongoose.model("cuenta", studiesSchema);

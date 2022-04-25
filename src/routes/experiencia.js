@@ -40,7 +40,7 @@ router2.put("/experiencia/:id", (req, res) => {
     req.body;
     experienciaSchema
         .updateOne({ _id: id }, {
-            $set: {  cargo, nombreEmpresa, duracion }
+            $set: { cargo, nombreEmpresa, duracion }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
@@ -55,3 +55,6 @@ router2.delete("/experiencia/:id", (req, res) => {
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
+
+
+module.exports = router2;
