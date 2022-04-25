@@ -38,9 +38,9 @@ router.put("/cuenta/:id", (req, res) => {
     const { id } = req.params;
     const { nombre, apellidos, email, puestoDeTrabajo, departamento } =
     req.body;
-    estudioSchema
+    cuentaSchema
         .updateOne({ _id: id }, {
-            $set: { nombre, apellidos, email, puestoDeTrabajo, departamento }
+            $set: { nombre, apellidos, email, puestoDeTrabajo, departamento },
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
@@ -50,7 +50,7 @@ router.put("/cuenta/:id", (req, res) => {
 //cuenta eliminar por id
 router.delete("/cuenta/:id", (req, res) => {
     const { id } = req.params;
-    estudioSchema
+    cuentaSchema
         .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));

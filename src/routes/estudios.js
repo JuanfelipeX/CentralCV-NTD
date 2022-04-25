@@ -14,7 +14,7 @@ y aparce un error, lo he intentado pero aparece el error app crashed y sale erro
 */
 
 //estudios post
-router2.post("/estudios", (req, res) => {
+router2.post("/estudio", (req, res) => {
     const estudios = estudiosSchema(req.body);
 
     estudios
@@ -25,7 +25,7 @@ router2.post("/estudios", (req, res) => {
 
 
 //estudios get
-router2.get("/estudios", (req, res) => {
+router2.get("/estudio", (req, res) => {
     estudiosSchema
         .find()
         .then((data) => res.json(data))
@@ -47,9 +47,16 @@ router2.put("/estudio/:id", (req, res) => {
     const { id } = req.params;
     const { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar } =
     req.body;
-    estudioSchema
+    estudiosSchema
         .updateOne({ _id: id }, {
-            $set: { nivelEstudios, titulos, descripcion, centrosEducativos, duracion, lugar }
+            $set: {
+                nivelEstudios,
+                titulos,
+                descripcion,
+                centrosEducativos,
+                duracion,
+                lugar,
+            },
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
@@ -59,7 +66,7 @@ router2.put("/estudio/:id", (req, res) => {
 //estudios eliminar por id
 router2.delete("/estudio/:id", (req, res) => {
     const { id } = req.params;
-    estudioSchema
+    estudiosSchema
         .remove({ _id: id })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
