@@ -2,12 +2,11 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" action="/validar" method="POST">
+        <form class="form-signin" (submit)="logIn()">
+            <!--  action="/validar" method="POST" -->
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo Electrónico" required autofocus>
-            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" required>
-            <div id="remember" class="checkbox">
-            </div>
+            <input type="email" [(ngModel)]="user.email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo Electrónico" required autofocus>
+            <input type="password" [(ngModel)]="user.password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" required>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
         </form>
         <!-- /form -->
