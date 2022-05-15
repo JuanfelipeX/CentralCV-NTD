@@ -1,18 +1,20 @@
-<div class="">
-    <form>
-        <div class=" mb-3 ">
-            <label for="exampleInputEmail1 " class="form-label ">Email address</label>
-            <input type="email " class="form-control " id="exampleInputEmail1 " aria-describedby="emailHelp ">
-            <div id="emailHelp " class="form-text ">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3 ">
-            <label for="exampleInputPassword1 " class="form-label ">Password</label>
-            <input type="password " class="form-control " id="exampleInputPassword1 ">
-        </div>
-        <div class="mb-3 form-check ">
-            <input type="checkbox " class="form-check-input " id="exampleCheck1 ">
-            <label class="form-check-label " for="exampleCheck1 ">Check me out</label>
-        </div>
-        <button type="submit " class="btn btn-primary ">Submit</button>
-    </form>
+<div class="container">
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" action="/validar" method="POST">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo Electrónico" required autofocus>
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" required>
+            <div id="remember" class="checkbox">
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
+        </form>
+        <!-- /form -->
+        <a href="#" class="forgot-password">
+                Crear una Nueva Cuenta
+            </a>
+    </div>
+    <!-- /card-container -->
 </div>
+<!-- /container -->
