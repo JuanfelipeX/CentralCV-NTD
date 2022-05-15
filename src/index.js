@@ -5,13 +5,14 @@ const cuentaRoutes = require("./routes/cuenta");
 const datosPersonalesRoutes = require("./routes/datosPersonales");
 const experienciaRoutes = require("./routes/experiencia");
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require('body-parser');
 const app = express();
 const port = 3000
+app.use(cors());
 const { default: mongoose } = require("mongoose");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 app.use("/api", userRoutes);
 app.use("/api", estudiosRoutes);
