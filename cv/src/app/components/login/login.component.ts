@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       },
       (err: any) => {
         console.log(err);
+        alert("Usuario No Encontrado")
       }
     );
     //console.log(this.user);

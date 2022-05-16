@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(41, 52, 97), rgb(109, 36, 36));
+}
+
+body,
+html {
+    height: 100%;
+}
