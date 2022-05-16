@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="card card-container">
+            <p id="profile-name" class="container-tittle">REGISTRATE</p>
+            <form class="form-signin  form-singup" (submit)="signup()">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" [(ngModel)]="user.nombre" id="inputnombre" name="inputnombre" class="form-control" placeholder="Nombres" required>
+                <input type="text" [(ngModel)]="user.apellidos" id="inputapellidos" name="inputapellido" class="form-control" placeholder="Apellidos" required>
+                <input type="email" [(ngModel)]="user.correo" id="inputcorreo" name="inputcorreo" class="form-control" placeholder="Correo Electrónico" required>
+                <input type="password" [(ngModel)]="user.clave" id="inputclave" name="inputclave" class="form-control" placeholder="Contraseña" required>
+                <input type="text" [(ngModel)]="user.departamento" id="inputdepartamento" name="inputdepartamento" class="form-control" placeholder="Departamento" required>
+                <input type="text" [(ngModel)]="user.puestoDeTrabajo" id="inputtrabajo" name="inputnombretrabajo" class="form-control" placeholder="Puesto de Trabajo" required>
+                <div id="remember" class="checkbox">
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Crear Cuenta</button>
+            </form>
+            <!-- /form -->
+        </div>
+        <!-- /card-container -->
+    </div>
+    <!-- /container -->
+
+</body>
+
+</html>
