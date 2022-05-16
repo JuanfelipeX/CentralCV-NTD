@@ -1,7 +1,6 @@
 require('dotenv').config();
 const userRoutes = require("./routes/authentication");
 const estudiosRoutes = require("./routes/estudios");
-const cuentaRoutes = require("./routes/cuenta");
 const datosPersonalesRoutes = require("./routes/datosPersonales");
 const experienciaRoutes = require("./routes/experiencia");
 const express = require("express");
@@ -16,7 +15,6 @@ app.use(bodyParser.json());
 
 app.use("/api", userRoutes);
 app.use("/api", estudiosRoutes);
-app.use("/api", cuentaRoutes);
 app.use("/api", datosPersonalesRoutes);
 app.use("/api", experienciaRoutes);
 
