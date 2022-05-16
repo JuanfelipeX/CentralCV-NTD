@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { CvComponent } from './components/cv/cv.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, CvComponent],
+  declarations: [AppComponent, LoginComponent, CvComponent, SignupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
