@@ -12,4 +12,10 @@ export class CvService {
   datosPersonales(datosPersonales: any){
     return this.http.post<any>(this.URL + '/datosPersonales', datosPersonales); 
   }
+  estudios(estudios: any){
+    return this.http.post<any>(this.URL + '/estudio', estudios); 
+  }
+  experiencia(experiencia: any){
+    return this.http.post<any>(this.URL + '/experiencia', experiencia); 
+  }
 }
