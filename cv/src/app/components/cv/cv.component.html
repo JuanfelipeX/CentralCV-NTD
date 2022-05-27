@@ -17,12 +17,23 @@
             <p id="profile-name" class="container-tittle">HOJA DE VIDA</p>
             <form class="form-signin  form-singup" (submit)="signup()">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" [(ngModel)]="user.nombre" id="inputnombre" name="inputnombre" class="form-control" placeholder="Nombres" required>
+                <input type="date" [(ngModel)]="datosPersonales.fechaNacimiento" id="inputfechaNacimiento" name="inputfechaNacimiento" class="form-control" placeholder="Fecha Nacimiento" required>
                 <input type="text" [(ngModel)]="user.apellidos" id="inputapellidos" name="inputapellido" class="form-control" placeholder="Apellidos" required>
-                <input type="email" [(ngModel)]="user.correo" id="inputcorreo" name="inputcorreo" class="form-control" placeholder="Correo Electrónico" required>
-                <input type="password" [(ngModel)]="user.clave" id="inputclave" name="inputclave" class="form-control" placeholder="Contraseña" required>
+                <input type="text" [(ngModel)]="user.correo" id="inputcorreo" name="inputcorreo" class="form-control" placeholder="Correo Electrónico" required>
+                <input type="text" [(ngModel)]="user.clave" id="inputclave" name="inputclave" class="form-control" placeholder="Contraseña" required>
                 <input type="text" [(ngModel)]="user.departamento" id="inputdepartamento" name="inputdepartamento" class="form-control" placeholder="Departamento" required>
                 <input type="text" [(ngModel)]="user.puestoDeTrabajo" id="inputtrabajo" name="inputnombretrabajo" class="form-control" placeholder="Puesto de Trabajo" required>
+                <input type="text" [(ngModel)]="user.nombre" id="inputnombre" name="inputnombre" class="form-control" placeholder="Nombres" required>
+                <input type="text" [(ngModel)]="user.apellidos" id="inputapellidos" name="inputapellido" class="form-control" placeholder="Apellidos" required>
+                <input type="text" [(ngModel)]="user.correo" id="inputcorreo" name="inputcorreo" class="form-control" placeholder="Correo Electrónico" required>
+                <input type="text" [(ngModel)]="user.clave" id="inputclave" name="inputclave" class="form-control" placeholder="Contraseña" required>
+                <input type="text" [(ngModel)]="user.departamento" id="inputdepartamento" name="inputdepartamento" class="form-control" placeholder="Departamento" required>
+                <input type="text" [(ngModel)]="user.puestoDeTrabajo" id="inputtrabajo" name="inputnombretrabajo" class="form-control" placeholder="Puesto de Trabajo" required>
+                <input type="text" [(ngModel)]="user.nombre" id="inputnombre" name="inputnombre" class="form-control" placeholder="Nombres" required>
+                <input type="text" [(ngModel)]="user.apellidos" id="inputapellidos" name="inputapellido" class="form-control" placeholder="Apellidos" required>
+                <input type="text" [(ngModel)]="user.correo" id="inputcorreo" name="inputcorreo" class="form-control" placeholder="Correo Electrónico" required>
+                <input type="text" [(ngModel)]="user.clave" id="inputclave" name="inputclave" class="form-control" placeholder="Contraseña" required>
+                <input type="text" [(ngModel)]="user.departamento" id="inputdepartamento" name="inputdepartamento" class="form-control" placeholder="Departamento" required>
                 <div id="remember" class="checkbox">
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Crear Cuenta</button>
