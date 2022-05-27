@@ -6,6 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CvService {
   private URL = 'http://localhost:3000/api';
-  
+
   constructor(private http: HttpClient) { }
+
+  datosPersonales(datosPersonales: any){
+    return this.http.post<any>(this.URL + '/datosPersonales', datosPersonales); 
+  }
 }
