@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CvService } from '../../services/cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -30,7 +31,41 @@ export class CvComponent implements OnInit {
     nombreEmpresa: '',
     duracion: ''
   }
-  constructor() {}
+  constructor(private CvService: CvService, private router: Router) {}
 
   ngOnInit(): void {}
+
+  cv() {
+    this.CvService.datosPersonales(this.datosPersonales).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.router.navigate(["/cv"]);
+      },
+      (err: any) => {
+        console.log(err);
+        alert("Usuario No Encontrado")
+      }
+    );
+    this.CvService.estudios(this.estudios).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.router.navigate(["/cv"]);
+      },
+      (err: any) => {
+        console.log(err);
+        alert("Usuario No Encontrado")
+      }
+    );
+    this.CvService.experiencia(this.experiencia).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.router.navigate(["/cv"]);
+      },
+      (err: any) => {
+        console.log(err);
+        alert("Usuario No Encontrado")
+      }
+    );
+    //console.log(this.user);
+  }
 }
