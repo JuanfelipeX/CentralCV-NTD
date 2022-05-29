@@ -32,6 +32,42 @@ const datosPersonalesSchema = mongoose.Schema({
     perfilProfesional: {
         type: String,
         required: true,
+    },
+    nivelEstudios: {
+        type: String,
+        required: true,
+    },
+    titulos: {
+        type: Array,
+        required: true,
+    },
+    descripcion: {
+        type: String,
+        required: true,
+    },
+    centrosEducativos: {
+        type: Array,
+        required: true,
+    },
+    duracion: {
+        type: String,
+        required: true,
+    },
+    lugar: {
+        type: String,
+        required: true,
+    },
+    cargo: {
+        type: String,
+        required: true,
+    },
+    nombreEmpresa: {
+        type: String,
+        required: true,
+    },
+    duracion2: {
+        type: String,
+        required: true,
     }
 });
 

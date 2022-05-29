@@ -15,28 +15,46 @@
     <div class="container">
         <div class="card card-container">
             <p id="profile-name" class="container-tittle">HOJA DE VIDA</p>
-            <form class="form-signin  form-singup" (submit)="signup()">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="date" [(ngModel)]="datosPersonales.fechaNacimiento" id="inputfechaNacimiento" name="inputfechaNacimiento" class="form-control" placeholder="Fecha Nacimiento" required>
-                <input type="text" [(ngModel)]="datosPersonales.identificacion" id="inputIdentificacion" name="inputIdentificacion" class="form-control" placeholder="telefono" required>
-                <input type="text" [(ngModel)]="datosPersonales.telefono" id="inputTelefono" name="inputTelefono" class="form-control" placeholder="Correo Electrónico" required>
-                <input type="text" [(ngModel)]="datosPersonales.pais" id="inputPais" name="inputPais" class="form-control" placeholder="País" required>
-                <input type="text" [(ngModel)]="datosPersonales.departamento" id="inputdepartamento" name="inputdepartamento" class="form-control" placeholder="Departamento" required>
-                <input type="text" [(ngModel)]="datosPersonales.ciudad" id="inputCiudad" name="inputCiudad" class="form-control" placeholder="Ciudad" required>
-                <input type="text" [(ngModel)]="datosPersonales.genero" id="inputGenero" name="inputGenero" class="form-control" placeholder="Género" required>
-                <input type="text" [(ngModel)]="datosPersonales.perfilProfesional" id="inputPerfilProfesional" name="inputPerfilProfesional" class="form-control" placeholder="Perfil Profesional" required>
-                <input type="text" [(ngModel)]="estudios.nivelEstudios" id="inputNivelEstudios" name="inputNivelEstudios" class="form-control" placeholder="Nivel estudios" required>
-                <input type="text" [(ngModel)]="estudios.titulos" id="inputTitulos" name="inputTitulos" class="form-control" placeholder="inputTitulos" required>
-                <input type="text" [(ngModel)]="estudios.descripcion" id="inputDescripcion" name="inputDescripcion" class="form-control" placeholder="descripción" required>
-                <input type="text" [(ngModel)]="estudios.centrosEducativos" id="inputCentrosEducativos" name="inputCentrosEducativos" class="form-control" placeholder="centros Educativos" required>
-                <input type="text" [(ngModel)]="estudios.duracion" id="inputDuracion" name="inputDuracion" class="form-control" placeholder="Duración" required>
-                <input type="text" [(ngModel)]="estudios.lugar" id="inputLugar" name="inputLugar" class="form-control" placeholder="Lugar" required>
-                <input type="text" [(ngModel)]="experiencia.cargo" id="inputCargo" name="inputCargo" class="form-control" placeholder="Cargo" required>
-                <input type="text" [(ngModel)]="experiencia.nombreEmpresa" id="inputNombreEmpresa" name="inputNombreEmpresa" class="form-control" placeholder="Nombre Empresa" required>
-                <input type="text" [(ngModel)]="experiencia.duracion" id="inputExperienciaDuracion" name="inputExperienciaDuracion" class="form-control" placeholder="Duración" required>
+            <form (submit)="Datos()">
+                <input type="date" [(ngModel)]="datosPersonales.fechaNacimiento" id="inputfechaNacimiento" name="inputfechaNacimiento"
+                    class="form-control" placeholder="Fecha Nacimiento" required>
+                <input type="text" [(ngModel)]="datosPersonales.identificacion" id="inputIdentificacion" name="inputIdentificacion"
+                    class="form-control" placeholder="Identificación" required>
+                <input type="text" [(ngModel)]="datosPersonales.telefono" id="inputTelefono" name="inputTelefono"
+                    class="form-control" placeholder="Teléfono" required>
+                <input type="text" [(ngModel)]="datosPersonales.pais" id="inputPais" name="inputPais" class="form-control"
+                    placeholder="País" required>
+                <input type="text" [(ngModel)]="datosPersonales.departamento" id="inputdepartamento" name="inputdepartamento"
+                    class="form-control" placeholder="Departamento" required>
+                <input type="text" [(ngModel)]="datosPersonales.ciudad" id="inputCiudad" name="inputCiudad" class="form-control"
+                    placeholder="Ciudad" required>
+                <input type="text" [(ngModel)]="datosPersonales.genero" id="inputGenero" name="inputGenero" class="form-control"
+                    placeholder="Género" required>
+                <input type="text" [(ngModel)]="datosPersonales.perfilProfesional" id="inputPerfilProfesional" name="inputPerfilProfesional"
+                    class="form-control" placeholder="Perfil Profesional" required>
+                <input type="text" [(ngModel)]="datosPersonales.nivelEstudios" id="inputNivelEstudios" name="inputNivelEstudios"
+                    class="form-control" placeholder="Nivel estudios" required>
+                <input type="text" [(ngModel)]="datosPersonales.titulos" id="inputTitulos" name="inputTitulos" class="form-control"
+                    placeholder="inputTitulos" required>
+                <input type="text" [(ngModel)]="datosPersonales.descripcion" id="inputDescripcion" name="inputDescripcion"
+                    class="form-control" placeholder="descripción" required>
+                <input type="text" [(ngModel)]="datosPersonales.centrosEducativos" id="inputCentrosEducativos" name="inputCentrosEducativos"
+                    class="form-control" placeholder="centros Educativos" required>
+                <input type="text" [(ngModel)]="datosPersonales.duracion" id="inputDuracion" name="inputDuracion"
+                    class="form-control" placeholder="Duración" required>
+                <input type="text" [(ngModel)]="datosPersonales.lugar" id="inputLugar" name="inputLugar" class="form-control"
+                    placeholder="Lugar" required>
+                <input type="text" [(ngModel)]="datosPersonales.cargo" id="inputCargo" name="inputCargo" class="form-control"
+                    placeholder="Cargo" required>
+                <input type="text" [(ngModel)]="datosPersonales.nombreEmpresa" id="inputNombreEmpresa" name="inputNombreEmpresa"
+                    class="form-control" placeholder="Nombre Empresa" required>
+                <input type="text" [(ngModel)]="datosPersonales.duracion2" id="inputExperienciaDuracion"
+                    name="inputExperienciaDuracion" class="form-control" placeholder="Duración" required>
                 <div id="remember" class="checkbox">
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Hacer hoja de
+                        vida</button>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Crear Cuenta</button>
+
             </form>
             <!-- /form -->
         </div>

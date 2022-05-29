@@ -37,11 +37,13 @@ router.get("/datosPersonales/:id", (req, res) => {
 //datosPersonales actualizar datos por id
 router.put("/datosPersonales/:id", (req, res) => {
     const { id } = req.params;
-    const { fechaNacimiento, identificacion, telefono, pais, departamento, ciudad, genero, perfilProfesional } =
+    const { fechaNacimiento, identificacion, telefono, pais, departamento, ciudad, genero, perfilProfesional, nivelEstudios, 
+        titulo, descripcion, centrosEducativos, duracion, lugar, cargo, nombreEmpresa, duracion2 } =
     req.body;
     datosPersonalesSchema
         .updateOne({ _id: id }, {
-            $set: { fechaNacimiento, identificacion, telefono, pais, departamento, ciudad, genero, perfilProfesional }
+            $set: { fechaNacimiento, identificacion, telefono, pais, departamento, ciudad, genero, perfilProfesional, nivelEstudios, 
+                titulo, descripcion, centrosEducativos, duracion, lugar, cargo, nombreEmpresa, duracion2 }
         })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));

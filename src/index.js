@@ -1,8 +1,7 @@
-require('dotenv').config();
+const dotenv = require('dotenv')
+dotenv.config({path:__dirname+'/.env'});
 const userRoutes = require("./routes/authentication");
-const estudiosRoutes = require("./routes/estudios");
 const datosPersonalesRoutes = require("./routes/datosPersonales");
-const experienciaRoutes = require("./routes/experiencia");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
@@ -14,9 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api", userRoutes);
-app.use("/api", estudiosRoutes);
 app.use("/api", datosPersonalesRoutes);
-app.use("/api", experienciaRoutes);
 
 app.get('/', function(req, res) {
     respuesta = {
